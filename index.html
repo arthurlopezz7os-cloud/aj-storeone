@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCell — Celulares</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span>SMART</span>CELL</div>
+    <a class="admin-link" href="#admin">Gerenciar</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CELULARES SELECIONADOS</p>
+        <h1>Seu próximo celular<br><span>está aqui.</span></h1>
+        <p class="hero-text">Confira nossos aparelhos, veja todos os detalhes e fale com a gente pelo WhatsApp para comprar.</p>
+        <a href="#catalogo" class="primary-btn">Ver celulares</a>
+      </div>
+      <div class="hero-phone" aria-hidden="true">
+        <div class="phone">
+          <div class="camera c1"></div><div class="camera c2"></div><div class="camera c3"></div>
+          <div class="phone-logo">S</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo" class="catalog">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">CATÁLOGO</p>
+          <h2>Celulares</h2>
+        </div>
+        <div class="filters">
+          <button class="filter active" data-filter="todos">Todos</button>
+          <button class="filter" data-filter="disponivel">Disponíveis</button>
+          <button class="filter" data-filter="vendido">Vendidos</button>
+        </div>
+      </div>
+      <div id="products" class="grid"></div>
+    </section>
+
+    <section id="admin" class="admin">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">DEMONSTRAÇÃO</p>
+          <h2>Gerenciar estoque</h2>
+        </div>
+      </div>
+      <p class="admin-note">Nesta primeira versão, o gerenciamento funciona neste navegador. Você pode adicionar aparelhos e alterar o status sem editar o código.</p>
+      <form id="productForm" class="form">
+        <input id="name" placeholder="Modelo (ex.: iPhone 15 Pro)" required>
+        <input id="storage" placeholder="Armazenamento (ex.: 256 GB)" required>
+        <input id="color" placeholder="Cor" required>
+        <input id="price" placeholder="Preço (ex.: R$ 4.299)" required>
+        <input id="image" placeholder="URL da foto do celular">
+        <select id="status"><option value="disponivel">Disponível</option><option value="vendido">Vendido</option></select>
+        <textarea id="description" placeholder="Descrição do aparelho"></textarea>
+        <button class="primary-btn" type="submit">Adicionar celular</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close" id="closeModal">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <footer>SMARTCELL • Catálogo de celulares</footer>
+  <script src="script.js"></script>
+</body>
+</html>
