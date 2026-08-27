@@ -2,7 +2,22 @@
 // AJ STORY / SMARTCELL
 // Catálogo de celulares
 // ==========================================
-
+// ==========================================
+// SISTEMA DE LINK SECRETO PARA O ADMINISTRADOR
+// ==========================================
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const isAdmin = urlParams.get('admin');
+    
+    // Altere a palavra "meusegredo" para a senha que você quiser usar no link
+    if (isAdmin !== 'meusegredo') {
+        // Se não for o administrador, esconde o formulário da tela
+        const formulario = document.querySelector('form') || document.querySelector('#form-cadastro') || document.querySelector('.admin-section');
+        if (formulario) {
+            formulario.style.setProperty('display', 'none', 'important');
+        }
+    }
+});
 const WHATSAPP = "559881530868";
 
 // Produtos iniciais do catálogo
